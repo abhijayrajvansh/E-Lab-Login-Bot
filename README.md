@@ -4,6 +4,8 @@
 
 # This bot can perform following operations: 
 
+Will login to your SRMIST's Elab account with your credentials ✅
+
 ```
 NOTE: This software is compatible Chrome Version : 90.0.4430.72 only!
 ```
