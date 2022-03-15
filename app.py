@@ -1,6 +1,6 @@
 #/
 #    author:   abhijayrajvansh
-#    created:  25.02.2022 17:29:04
+#    created:  16.03.2022 04:28:07
 #/
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -15,7 +15,7 @@ pwd = os.getcwd()
 PATH = Service(pwd + "/chromedriver")
 
 # url to be launched ...
-url = "https://google.com"
+url = "https://dld.srmist.edu.in/srmktretelab/#/" # elab url
 
 # Handling Chrome Options:
 chromeOptions = Options()
@@ -25,33 +25,19 @@ chromeOptions.add_argument("--disable-notifications")
 
 # driver setup:
 driver = webdriver.Chrome(service = PATH, options = chromeOptions)
-# driver.maximize_window()
+driver.maximize_window()
 # driver.minimize_window()
 
 driver.get(url) # launches the broswer and open url
 
+username = "314019048686"
+password = "314019048686"
 
-#``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
-# Opening a new tab in browser:
+def login():
+    driver.find_element(By.XPATH, "//input[@id='Username1']").send_keys(username)
+    driver.find_element(By.XPATH, "//input[@id='Password']").send_keys(password)
+    driver.find_element(By.XPATH, "//button[@class='ant-btn ant-btn-primary ant-btn-block']").click()
 
-another_page_URL = "https://youtube.com"
-
-driver.execute_script("window.open('https://youtube.com')")
-# driver.switch_to.window(driver.window_handle)
-
-# driver.get(another_page_URL)
-
+login()
 
 
-
-
-
-
-
-
-
-
-#````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
-# choice = input("Close Web Browser [YES] or [NO] : ")
-# if choice == 'Y' or choice == 'y' or choice == 'yes' or choice == 'YES':
-#     driver.quit()
