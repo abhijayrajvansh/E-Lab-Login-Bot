@@ -30,8 +30,8 @@ driver.maximize_window()
 
 driver.get(url) # launches the broswer and open url
 
-username = "314019048686"
-password = "314019048686"
+username = ""
+password = ""
 
 def login():
     driver.find_element(By.XPATH, "//input[@id='Username1']").send_keys(username)
